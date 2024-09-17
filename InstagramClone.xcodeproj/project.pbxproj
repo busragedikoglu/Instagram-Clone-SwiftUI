@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BC7C73A52C987960005ACC7F /* InstagramCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C73A42C987960005ACC7F /* InstagramCloneApp.swift */; };
-		BC7C73A72C987960005ACC7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C73A62C987960005ACC7F /* ContentView.swift */; };
 		BC7C73A92C987961005ACC7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7C73A82C987961005ACC7F /* Assets.xcassets */; };
 		BC7C73AC2C987961005ACC7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7C73AB2C987961005ACC7F /* Preview Assets.xcassets */; };
 		BC7C73B32C987987005ACC7F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC7C73B22C987987005ACC7F /* GoogleService-Info.plist */; };
@@ -16,19 +15,24 @@
 		BC7C73B82C987A11005ACC7F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BC7C73B72C987A11005ACC7F /* FirebaseAuth */; };
 		BC7C73BA2C987A11005ACC7F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BC7C73B92C987A11005ACC7F /* FirebaseFirestore */; };
 		BC7C73BC2C987A11005ACC7F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BC7C73BB2C987A11005ACC7F /* FirebaseStorage */; };
-		BCF87FAD2C98D8DE0096C216 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF87FAC2C98D8DE0096C216 /* LoginView.swift */; };
+		BCF87FAD2C98D8DE0096C216 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF87FAC2C98D8DE0096C216 /* SignInView.swift */; };
 		BCF87FAF2C98D9690096C216 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF87FAE2C98D9690096C216 /* LoginViewModel.swift */; };
+		BCF87FB12C9984180096C216 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF87FB02C9984180096C216 /* HomeView.swift */; };
+		BCF87FB32C99A4D40096C216 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF87FB22C99A4D40096C216 /* SignUpView.swift */; };
+		BCF87FB62C99A9F40096C216 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF87FB52C99A9F40096C216 /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC7C73A12C987960005ACC7F /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7C73A42C987960005ACC7F /* InstagramCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneApp.swift; sourceTree = "<group>"; };
-		BC7C73A62C987960005ACC7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC7C73A82C987961005ACC7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC7C73AB2C987961005ACC7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC7C73B22C987987005ACC7F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BCF87FAC2C98D8DE0096C216 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BCF87FAC2C98D8DE0096C216 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BCF87FAE2C98D9690096C216 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BCF87FB02C9984180096C216 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BCF87FB22C99A4D40096C216 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		BCF87FB52C99A9F40096C216 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +69,12 @@
 		BC7C73A32C987960005ACC7F /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				BCF87FB42C99A9D90096C216 /* Service */,
 				BCF87FAB2C98D7D90096C216 /* View */,
 				BCF87FAA2C98D7CB0096C216 /* ViewModel */,
 				BCF87FA92C98D7BD0096C216 /* Model */,
 				BC7C73B22C987987005ACC7F /* GoogleService-Info.plist */,
 				BC7C73A42C987960005ACC7F /* InstagramCloneApp.swift */,
-				BC7C73A62C987960005ACC7F /* ContentView.swift */,
 				BC7C73A82C987961005ACC7F /* Assets.xcassets */,
 				BC7C73AA2C987961005ACC7F /* Preview Content */,
 			);
@@ -103,9 +107,19 @@
 		BCF87FAB2C98D7D90096C216 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BCF87FAC2C98D8DE0096C216 /* LoginView.swift */,
+				BCF87FAC2C98D8DE0096C216 /* SignInView.swift */,
+				BCF87FB02C9984180096C216 /* HomeView.swift */,
+				BCF87FB22C99A4D40096C216 /* SignUpView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BCF87FB42C99A9D90096C216 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BCF87FB52C99A9F40096C216 /* AuthService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF87FAF2C98D9690096C216 /* LoginViewModel.swift in Sources */,
-				BCF87FAD2C98D8DE0096C216 /* LoginView.swift in Sources */,
-				BC7C73A72C987960005ACC7F /* ContentView.swift in Sources */,
+				BCF87FB32C99A4D40096C216 /* SignUpView.swift in Sources */,
+				BCF87FAD2C98D8DE0096C216 /* SignInView.swift in Sources */,
+				BCF87FB62C99A9F40096C216 /* AuthService.swift in Sources */,
+				BCF87FB12C9984180096C216 /* HomeView.swift in Sources */,
 				BC7C73A52C987960005ACC7F /* InstagramCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

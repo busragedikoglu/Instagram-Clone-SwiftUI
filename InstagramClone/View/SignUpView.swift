@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  SignUpView.swift
 //  InstagramClone
 //
 //  Created by Büşra Gedikoğlu on 17.09.2024.
@@ -7,29 +7,42 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct SignUpView: View {
+    @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var isShowAlert: Bool = false
-    @State private var alertMessage: String = ""
+    @State private var showHomeView: Bool = false
+    @State private var showSignInView: Bool = false
+    @ObservedObject private var authService = AuthService()
 
     var body: some View {
         NavigationStack {
-            Text("Instagram Clone")
-                .font(.title)
-                .padding(.bottom, 100)
-            textFields(textName: "Email", imageName: "mail", secureField: false, text: $email)
-            textFields(textName: "Password", imageName: "lock", secureField: true, text: $password)
-            signInButton
+            VStack {
+                Text("Create Account")
+                    .font(.title)
+                    .padding(.bottom, 80)
+                inputField(textName: "Name", imageName: "person", isSecureField: false, text: $name)
+                inputField(textName: "Email", imageName: "mail", isSecureField: false, text: $email)
+                inputField(textName: "Password", imageName: "lock", isSecureField: true, text: $password)
+                signUpButton
+            }
+            .padding()
+            .navigationDestination(isPresented: $showHomeView) {
+                HomeView()
+            }
+            .navigationDestination(isPresented: $showSignInView) {
+                SignInView()
+            }
         }
+        .accentColor(.black)
     }
 
-    private func textFields(textName: String, imageName: String, secureField: Bool, text: Binding<String>) -> some View {
+    private func inputField(textName: String, imageName: String, isSecureField: Bool, text: Binding<String>) -> some View {
         HStack {
             Image(systemName: imageName)
                 .foregroundColor(.black)
                 .padding(.leading, 8)
-            if secureField == true {
+            if isSecureField == true {
                 SecureField(textName, text: text)
                     .padding(14)
                     .autocapitalization(.none)
@@ -49,17 +62,16 @@ struct LoginView: View {
         .padding()
     }
 
-    private var signInButton: some View {
+    private var signUpButton: some View {
         Button(action: {
-            if email.isEmpty || password.isEmpty {
-                alertMessage = "Email and Password cannot be empty."
-                isShowAlert = true
-            } else {
-                alertMessage = "Authentication failed. Please check your credentials."
-                isShowAlert = true
+            authService.signUpClicked(email: email, password: password) { success in
+                if success {
+                    showHomeView = true
+                }
             }
+
         }) {
-            Text("Sign In")
+            Text("Register")
                 .font(.callout)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
@@ -74,8 +86,4 @@ struct LoginView: View {
         }
         .padding()
     }
-}
-
-#Preview {
-    LoginView()
 }
